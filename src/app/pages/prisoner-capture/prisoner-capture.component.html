@@ -1,44 +1,5 @@
-<!--<form action="">
-  <mat-card>Prisoner List</mat-card>
-  <table>
-    <tr>
-      <td>First Name</td>
-      <td colspan="2">
-          <mat-form-field>
-              <input type="text" matInput>
-              <mat-hint>Enter First Name</mat-hint>
-          </mat-form-field>
-      </td>
-    </tr>
-    <tr>
-      <td>Last Name</td>
-      <td colspan="2">
-          <mat-form-field>
-              <input type="text" matInput>
-              <mat-hint>Enter Last Name</mat-hint>
-          </mat-form-field>
-      </td>
-    </tr>
-    <tr>
-      <td>Date Of Birth</td>
-      <td colspan="4">
-          <mat-form-field>
-              <input matInput [matDatepicker]="picker">
-              <mat-hint>Choose date of birth</mat-hint>
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td><button mat-raised-button color="primary">Submit</button></td>
-    </tr>
-  </table>
-</form>-->
 <div class="margin-below-content">
-<h2>Prisoner List</h2>
+<h2>Capture Prisoner Information</h2>
 <hr>
   <div class="prisoner-form">
     <h3>Personal Information</h3>
@@ -74,7 +35,8 @@
         <td>Education</td>
         <td><mat-form-field>
           <mat-select>
-
+          <mat-option value="diploma">National Diploma</mat-option>
+          <mat-option value="degree">University Degree</mat-option>
           </mat-select>
           <mat-hint>Select Level Of Education</mat-hint>
         </mat-form-field>
@@ -88,26 +50,77 @@
     </table>
     </form>
     <hr class="margin-at-bottom-20">
+    <h3>Address Information</h3>
+    <form>
+      <table>
+        <tr>
+          <td>Street Number</td>
+          <td><mat-form-field>
+            <input type="text" matInput>
+          </mat-form-field></td>
+          <td>Street Name</td>
+          <td><mat-form-field>
+           <input type="text" matInput>
+          </mat-form-field>
+         </td>
+        </tr>
+        <tr>
+          <td>Suburb</td>
+          <td><mat-form-field>
+          <mat-select>
+            <mat-option value="northcrest">Northcrest</mat-option>
+            <mat-option value="southernwood">Southernwood</mat-option>
+          </mat-select>
+          </mat-form-field>
+        </td>
+        <td>City</td>
+        <td><mat-form-field>
+          <mat-select>
+            <mat-option value="mthatha">Mthatha</mat-option>
+            <mat-option value="east london">East London</mat-option>
+          </mat-select>
+        </mat-form-field></td>
+        </tr>
+        <tr>
+          <td>Postal Code</td>
+          <td><mat-form-field>
+            <input type="text" matInput>
+          </mat-form-field></td>
+        </tr>
+      </table>
+    </form>
+    <hr class="margin-at-bottom-20">
     <h3>Prison Information</h3>
     <form>
       <table>
         <tr>
           <td>Prison Held</td>
           <td><mat-form-field>
-
             <mat-select formControlName="selectPrison">
-              <mat-option></mat-option>
+              <mat-option value="wellington">Wellington</mat-option>
+              <mat-option value="pollsmoor">Pollsmoor</mat-option>
             </mat-select>
             <mat-hint>Select Prison</mat-hint>
           </mat-form-field>
           </td>
-          <td>Offence</td>
+          <td>Location</td>
           <td><mat-form-field>
             <mat-select>
-
+              <mat-option value="mthatha">Mthatha</mat-option>
+              <mat-option value="cape town">Cape Town</mat-option>
             </mat-select>
-            <mat-hint>Select Prisoner Offence</mat-hint>
+            <mat-hint>Select Prisoner Location</mat-hint>
           </mat-form-field></td>
+        </tr>
+        <tr>
+            <td>Offence</td>
+            <td><mat-form-field>
+              <mat-select>
+                <mat-option value="murder">Murder</mat-option>
+                <mat-option value="rape">Rape</mat-option>
+              </mat-select>
+              <mat-hint>Select Prisoner Offence</mat-hint>
+            </mat-form-field></td>
         </tr>
         <tr>
           <td>File Number</td>
@@ -119,7 +132,8 @@
           <td>Status</td>
           <td><mat-form-field>
             <mat-select>
-              
+              <mat-option value="new inmate">New Inmate</mat-option>
+              <mat-option value="awaiting trial">Awaiting Trial</mat-option>
             </mat-select>
             <mat-hint>Select Prisoner Status</mat-hint>
           </mat-form-field>

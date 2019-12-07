@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { PrisonerService } from './../../services/prisoner.service';
+import { PrisonerService } from '../../services/prisoner.service';
 import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-prisoner-list',
-  templateUrl: './prisoner-list.component.html',
-  styleUrls: ['./prisoner-list.component.scss']
+  templateUrl: './prisoner-capture.component.html',
+  styleUrls: ['./prisoner-capture.component.scss']
 })
 export class PrisonerListComponent implements OnInit {
   

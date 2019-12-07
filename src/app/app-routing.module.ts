@@ -10,7 +10,7 @@ const routes: Routes = [{
   children: [
     {
       path: 'page-one',
-      loadChildren: './pages/prisoner-list/prisoner-list.module#PrisonerListModule'
+      loadChildren: './pages/prisoner-capture/prisoner-capture.module#PrisonerListModule'
      },
      {
        path: 'page-two',

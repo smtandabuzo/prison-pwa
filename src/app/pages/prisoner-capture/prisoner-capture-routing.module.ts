@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PrisonerListComponent } from './prisoner-list.component';
+import { PrisonerListComponent } from './prisoner-capture.component';
 
 const routes: Routes = [{path: '', component: PrisonerListComponent}];
 
