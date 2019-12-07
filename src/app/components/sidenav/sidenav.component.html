@@ -1,0 +1,12 @@
+<mat-sidenav-container>
+  <mat-sidenav opened mode="side">
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['page-one']">Prisoner List</a>
+      <a mat-list-item [routerLink]="['page-two']">Court Cases</a>
+      <a mat-list-item [routerLink]="['page-three']">Prisoner Transfer</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

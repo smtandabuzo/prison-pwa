@@ -1,0 +1,6 @@
+{
+    "/prison-backend/*": {
+        "target": "http://localhost:8082/",
+        "changeOrigin": true
+      }
+}

@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0 !important; }
+
+$primary: #002856;
+$white: #ffffff;
+$tertiary: #1e7dce;
+$gunmetal: #747474;
+
+.margin-below-content {
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: 1.5em;
+    line-height: 125%;
+    color: $primary;
+    font-weight: 400;
+    margin: 0px;
+}
+
+h3 {
+    font-size: 1.125em;
+    line-height: 125%;
+    color: $tertiary;
+    font-weight: 400;
+    margin: 0px;
+}
+
+.prisoner-form {
+    background: $white;
+    position: relative;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.margin-at-bottom-20 {
+    margin-bottom: 20px;
+}
+
+.mat-select {
+    border: 1px solid $gunmetal;
+}
+  
+.mat-option {
+    font-size: 12px;
+}
+
+
+ 
