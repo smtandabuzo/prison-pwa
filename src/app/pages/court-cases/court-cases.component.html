@@ -1,3 +1,83 @@
-<p>
-  court-cases works!
-</p>
+<div class="margin-below-content">
+  <h2>Court Case Information</h2>
+  <hr>
+  <div class="prisoner-form">
+    <h3>Court Information</h3>
+    <form>
+      <table>
+        <tr>
+          <td>Court Date</td>
+          <td><mat-form-field>
+            <input type="text" matInput>
+            <mat-hint>Enter Court Date</mat-hint>
+          </mat-form-field>
+          </td>
+          <td>Court Name</td>
+          <td><mat-form-field>
+           <mat-select></mat-select>
+           <mat-hint>Select Court</mat-hint>
+          </mat-form-field>
+        </td>
+        </tr>
+        <tr>
+          <td>Presiding Judge</td>
+          <td><mat-form-field>
+            <mat-select></mat-select>
+            <mat-hint>Select Judge</mat-hint>
+          </mat-form-field></td>
+          <td>Attorney</td>
+          <td><mat-form-field>
+            <input type="text" matInput>
+            <mat-hint>Enter Attorney</mat-hint>
+          </mat-form-field></td>
+        </tr>
+      </table>
+    </form>
+    <table>
+      <tr>
+        <td>
+          <button mat-raised-button (click)="addNewPrisoner(newPrisoner)">Save Court Information</button>
+        </td>
+      </tr>
+    </table>
+    <hr class="margin-at-bottom-20">
+  </div>
+  <div class="prisoner-form">
+    <h3>Case Information</h3>
+    <form>
+      <table>
+        <tr>
+          <td>Case Number</td>
+          <td><mat-form-field>
+            <input type="text" matInput>
+            <mat-hint>Enter Case Number</mat-hint>
+          </mat-form-field></td>
+          <td>Offence</td>
+          <td><mat-form-field>
+            <mat-select></mat-select>
+            <mat-hint>Select Offence</mat-hint>
+          </mat-form-field></td>
+        </tr>
+        <tr>
+          <td>Prisoner Name</td>
+          <td><mat-form-field>
+            <input type="text" matInput>
+          </mat-form-field></td>
+          <td>Case Outcome</td>
+          <td><mat-form-field>
+            <mat-select></mat-select>
+            <mat-hint>Select Case Outcome</mat-hint>
+          </mat-form-field></td>
+        </tr>
+      </table>
+    </form>
+    <table>
+      <tr>
+        <td>
+          <button mat-raised-button (click)="addNewPrisoner(newPrisoner)">Save Case Information</button>
+        </td>
+      </tr>
+    </table>
+    <hr class="margin-at-bottom-20">
+  </div>
+</div>

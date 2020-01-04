@@ -5,6 +5,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { PrisonerListRoutingModule } from './prisoner-capture-routing.module';
 import { PrisonerListComponent } from './prisoner-capture.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [PrisonerListComponent],
@@ -18,7 +19,8 @@ import { PrisonerListComponent } from './prisoner-capture.component';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule, 
-    MatRippleModule
+    MatRippleModule,
+    FormsModule
   ]
 })
 export class PrisonerListModule { }

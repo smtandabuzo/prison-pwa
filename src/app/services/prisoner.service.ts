@@ -19,4 +19,10 @@ export class PrisonerService {
         return responseData;
     }));
   }
+
+  addNewPrisoner(prisoner){
+    this.http.post(this.APP_SETTINGS.prisonerListURL, prisoner).subscribe((responseData =>{
+       console.log('Response data ' + JSON.stringify(responseData));
+    }))
+  }
 }

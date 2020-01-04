@@ -1,3 +1,66 @@
-<p>
-  prisoner-transfer works!
-</p>
+<div class="margin-below-content">
+  <h2>Prisoner Transfer</h2>
+  <hr>
+  <div class="prisoner-form">
+    <h3>Transfer Information</h3>
+    <form>
+      <table>
+        <tr>
+          <td>Transfer From Prison</td>
+          <td><mat-form-field>
+            <mat-select></mat-select>
+            <mat-hint>Transfer From</mat-hint>
+        </mat-form-field></td>
+        <td>Transfer To Prison</td>
+          <td><mat-form-field>
+            <mat-select></mat-select>
+            <mat-hint>Transfer To</mat-hint>
+        </mat-form-field></td>
+        </tr>
+        <tr>
+          <td>Prisoner Name</td>
+          <td><mat-form-field>
+            <input type="text" matInput>
+            <mat-hint>Enter Prisoner Name</mat-hint>
+          </mat-form-field></td>
+          <td>Reason For Transfer</td>
+          <td><mat-form-field>
+            <mat-select></mat-select>
+            <mat-hint>Select Reason</mat-hint>
+          </mat-form-field></td>
+        </tr>
+        <tr>
+          <td>Transfer Date</td>
+          <td><mat-form-field>
+            <input type="text" matInput>
+            <mat-hint>Enter Transfer Date</mat-hint>
+          </mat-form-field></td>
+          <td>Arrival Date</td>
+          <td><mat-form-field>
+            <input type="text" matInput>
+            <mat-hint>Enter Arrival Date</mat-hint>
+          </mat-form-field></td>
+        </tr>
+        <tr>
+            <td>Releasing Officer</td>
+            <td><mat-form-field>
+              <mat-select></mat-select>
+              <mat-hint>Select Releasing Officer</mat-hint>
+            </mat-form-field></td>
+            <td>Receiving Officer</td>
+            <td><mat-form-field>
+              <mat-select></mat-select>
+              <mat-hint>Select Receiving Officer</mat-hint>
+            </mat-form-field></td>
+        </tr>
+      </table>
+    </form>
+    <table>
+        <tr>
+          <td>
+            <button mat-raised-button (click)="addNewPrisoner(newPrisoner)">Complete Transfer</button>
+          </td>
+        </tr>
+      </table>
+  </div>
+</div>

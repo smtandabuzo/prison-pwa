@@ -1,5 +1,5 @@
 <div class="margin-below-content">
-<h2>Capture Prisoner Information</h2>
+<h2>Prisoner Information</h2>
 <hr>
   <div class="prisoner-form">
     <h3>Personal Information</h3>
@@ -8,12 +8,12 @@
       <tr>
           <td>First Name</td>
           <td><mat-form-field>
-            <input type="text" matInput>
+            <input type="text" matInput name="firstname" [(ngModel)]="newPrisoner.firstname">
             <mat-hint>Enter First Name</mat-hint>
           </mat-form-field></td>
           <td>Last Name</td>
           <td><mat-form-field>
-           <input type="text" matInput>
+           <input type="text" matInput name="lastname" [(ngModel)]="newPrisoner.lastname">
            <mat-hint>Enter Last Name</mat-hint>
           </mat-form-field>
         </td>
@@ -21,53 +21,48 @@
       <tr>
         <td>Date Of Birth</td>
         <td><mat-form-field>
-         <input type="text" matInput>
+         <input type="text" name="dateOfBirth" matInput [(ngModel)]="newPrisoner.dateOfBirth">
          <mat-hint>Enter Date Of Birth</mat-hint>
         </mat-form-field>
         </td>
         <td>National ID</td>
         <td><mat-form-field>
-          <input type="text" matInput>
+          <input type="text" name="nationalID" matInput [(ngModel)]="newPrisoner.nationalID">
           <mat-hint>Enter National ID</mat-hint>
         </mat-form-field></td>
       </tr>
       <tr>
         <td>Education</td>
         <td><mat-form-field>
-          <mat-select>
+          <mat-select name="education" [(ngModel)]="newPrisoner.education" (change)="educationSelected($event.value)">
           <mat-option value="diploma">National Diploma</mat-option>
           <mat-option value="degree">University Degree</mat-option>
           </mat-select>
           <mat-hint>Select Level Of Education</mat-hint>
         </mat-form-field>
         </td>
-        <td>Address</td>
-        <td><mat-form-field>
-          <input type="text" matInput>
-          <mat-hint>Enter Address</mat-hint>
-        </mat-form-field></td>
       </tr>
     </table>
     </form>
-    <hr class="margin-at-bottom-20">
+    <!--<hr class="margin-at-bottom-20">
     <h3>Address Information</h3>
     <form>
       <table>
         <tr>
           <td>Street Number</td>
           <td><mat-form-field>
-            <input type="text" matInput>
+            <input type="text" name="streetnumber" matInput [(ngModel)]="newPrisoner.streetnumber">
           </mat-form-field></td>
           <td>Street Name</td>
           <td><mat-form-field>
-           <input type="text" matInput>
+           <input type="text" name="streetname" matInput [(ngModel)]="newPrisoner.streetname">
           </mat-form-field>
          </td>
         </tr>
         <tr>
           <td>Suburb</td>
           <td><mat-form-field>
-          <mat-select>
+          <mat-select name="suburb" [(ngModel)]="newPrisoner.suburb">
             <mat-option value="northcrest">Northcrest</mat-option>
             <mat-option value="southernwood">Southernwood</mat-option>
           </mat-select>
@@ -75,7 +70,7 @@
         </td>
         <td>City</td>
         <td><mat-form-field>
-          <mat-select>
+          <mat-select name="city" [(ngModel)]="newPrisoner.city">
             <mat-option value="mthatha">Mthatha</mat-option>
             <mat-option value="east london">East London</mat-option>
           </mat-select>
@@ -84,11 +79,11 @@
         <tr>
           <td>Postal Code</td>
           <td><mat-form-field>
-            <input type="text" matInput>
+            <input type="text" name="postalcode" matInput [(ngModel)]="newPrisoner.postalcode">
           </mat-form-field></td>
         </tr>
       </table>
-    </form>
+    </form>-->
     <hr class="margin-at-bottom-20">
     <h3>Prison Information</h3>
     <form>
@@ -96,7 +91,7 @@
         <tr>
           <td>Prison Held</td>
           <td><mat-form-field>
-            <mat-select formControlName="selectPrison">
+            <mat-select name="prison" [(ngModel)]="newPrisoner.prison" (change)="prisonHeldSelected($event.value)">
               <mat-option value="wellington">Wellington</mat-option>
               <mat-option value="pollsmoor">Pollsmoor</mat-option>
             </mat-select>
@@ -105,7 +100,7 @@
           </td>
           <td>Location</td>
           <td><mat-form-field>
-            <mat-select>
+            <mat-select name="location" [(ngModel)]="newPrisoner.location" (change)="educationSelected($event.value)">
               <mat-option value="mthatha">Mthatha</mat-option>
               <mat-option value="cape town">Cape Town</mat-option>
             </mat-select>
@@ -115,7 +110,7 @@
         <tr>
             <td>Offence</td>
             <td><mat-form-field>
-              <mat-select>
+              <mat-select name="offence" [(ngModel)]="newPrisoner.offence" (change)="educationSelected($event.value)">
                 <mat-option value="murder">Murder</mat-option>
                 <mat-option value="rape">Rape</mat-option>
               </mat-select>
@@ -125,13 +120,13 @@
         <tr>
           <td>File Number</td>
           <td><mat-form-field>
-            <input type="text" matInput>
+            <input type="text" name="fileNumber" matInput [(ngModel)]="newPrisoner.fileNumber">
             <mat-hint>Enter File Number</mat-hint>
           </mat-form-field>
           </td>
           <td>Status</td>
           <td><mat-form-field>
-            <mat-select>
+            <mat-select name="status" [(ngModel)]="newPrisoner.status" (change)="educationSelected($event.value)">
               <mat-option value="new inmate">New Inmate</mat-option>
               <mat-option value="awaiting trial">Awaiting Trial</mat-option>
             </mat-select>
@@ -145,7 +140,7 @@
     <table>
       <tr>
         <td>
-          <button mat-raised-button>Save Prisoner</button>
+          <button mat-raised-button (click)="addNewPrisoner(newPrisoner)">Save Prisoner</button>
         </td>
       </tr>
     </table>
