@@ -8,13 +8,16 @@
         <tr>
           <td>Court Date</td>
           <td><mat-form-field>
-            <input type="text" matInput>
+            <input type="text" name="courtDate" matInput [(ngModel)]="newCourt.courtDate">
             <mat-hint>Enter Court Date</mat-hint>
           </mat-form-field>
           </td>
           <td>Court Name</td>
           <td><mat-form-field>
-           <mat-select></mat-select>
+           <mat-select name="courtName" [(ngModel)]="newCourt.courtName" (change)="selectCourtName($event.value)">
+             <mat-option value="high court">High Court</mat-option>
+             <mat-option value="supreme court">Supreme Court</mat-option>
+           </mat-select>
            <mat-hint>Select Court</mat-hint>
           </mat-form-field>
         </td>
@@ -22,12 +25,15 @@
         <tr>
           <td>Presiding Judge</td>
           <td><mat-form-field>
-            <mat-select></mat-select>
+            <mat-select name="presidingJudge" [(ngModel)]="newCourt.presidingJudge" (change)="selectJudge($event.value)">
+              <mat-option value="lesiba">Lesiba</mat-option>
+              <mat-option value="seleka">Seleka</mat-option>
+            </mat-select>
             <mat-hint>Select Judge</mat-hint>
           </mat-form-field></td>
           <td>Attorney</td>
           <td><mat-form-field>
-            <input type="text" matInput>
+            <input type="text" name="attorney" matInput [(ngModel)]="newCourt.attorney">
             <mat-hint>Enter Attorney</mat-hint>
           </mat-form-field></td>
         </tr>
@@ -36,7 +42,7 @@
     <table>
       <tr>
         <td>
-          <button mat-raised-button (click)="addNewPrisoner(newPrisoner)">Save Court Information</button>
+          <button mat-raised-button (click)="addNewCourt(newCourt)">Save Court Information</button>
         </td>
       </tr>
     </table>
@@ -49,23 +55,29 @@
         <tr>
           <td>Case Number</td>
           <td><mat-form-field>
-            <input type="text" matInput>
+            <input type="text" name="caseNumber" matInput [(ngModel)]="newCase.caseNumber">
             <mat-hint>Enter Case Number</mat-hint>
           </mat-form-field></td>
           <td>Offence</td>
           <td><mat-form-field>
-            <mat-select></mat-select>
+            <mat-select name="offence" [(ngModel)]="newCase.offence" (change)="selectOffence($event.value)">
+              <mat-option value="rape">Rape</mat-option>
+              <mat-option value="murder">Murder</mat-option>
+            </mat-select>
             <mat-hint>Select Offence</mat-hint>
           </mat-form-field></td>
         </tr>
         <tr>
           <td>Prisoner Name</td>
           <td><mat-form-field>
-            <input type="text" matInput>
+            <input type="text" name="prisonerName" matInput [(ngModel)]="newCase.prisonerName">
           </mat-form-field></td>
           <td>Case Outcome</td>
           <td><mat-form-field>
-            <mat-select></mat-select>
+            <mat-select name="caseOutcome" [(ngModel)]="newCase.caseOutcome" (change)="selectCaseOutcome($event.value)">
+              <mat-option value="post ponement">Postponement</mat-option>
+              <mat-option value="sentencing">Sentencing</mat-option>
+            </mat-select>
             <mat-hint>Select Case Outcome</mat-hint>
           </mat-form-field></td>
         </tr>
@@ -74,7 +86,7 @@
     <table>
       <tr>
         <td>
-          <button mat-raised-button (click)="addNewPrisoner(newPrisoner)">Save Case Information</button>
+          <button mat-raised-button (click)="addNewCase(newCase)">Save Case Information</button>
         </td>
       </tr>
     </table>

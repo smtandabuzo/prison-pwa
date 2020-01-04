@@ -15,14 +15,32 @@ export class PrisonerService {
 
   getPrisonerList(): any {
     this.http.get(this.APP_SETTINGS.prisonerListURL).subscribe((responseData =>{
-        console.log('Response data ' + JSON.stringify(responseData));
+        console.log('get Prisoner List - Response data ' + JSON.stringify(responseData));
         return responseData;
     }));
   }
 
   addNewPrisoner(prisoner){
     this.http.post(this.APP_SETTINGS.prisonerListURL, prisoner).subscribe((responseData =>{
-       console.log('Response data ' + JSON.stringify(responseData));
+       console.log('Add Prisoner - Response data ' + JSON.stringify(responseData));
+    }))
+  }
+
+  addNewTransfer(transfer){
+    this.http.post(this.APP_SETTINGS.transferListURL, transfer).subscribe((responseData =>{
+      console.log('Add New Transfer - Response data ' + JSON.stringify(responseData));
+    }))
+  }
+
+  addNewCourt(court){
+    this.http.post(this.APP_SETTINGS.courtListURL, court).subscribe((responseData =>{
+      console.log('Add New Court - Response data ' + JSON.stringify(responseData));
+    }))
+  }
+
+  addNewCase(newCase){
+    this.http.post(this.APP_SETTINGS.caseListURL, newCase).subscribe((responseData =>{
+      console.log('Add New Case - Response data ' + JSON.stringify(responseData));
     }))
   }
 }

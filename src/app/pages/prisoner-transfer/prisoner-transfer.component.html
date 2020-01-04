@@ -8,48 +8,74 @@
         <tr>
           <td>Transfer From Prison</td>
           <td><mat-form-field>
-            <mat-select></mat-select>
+            <mat-select name="toPrison" [(ngModel)]="newTransfer.toPrison" (change)="fromPrisonSelected($event.value)">
+              <mat-option value="wellington">Wellington Prison</mat-option>
+              <mat-option value="pollsmoor">Pollsmoor</mat-option>
+            </mat-select>
             <mat-hint>Transfer From</mat-hint>
         </mat-form-field></td>
         <td>Transfer To Prison</td>
           <td><mat-form-field>
-            <mat-select></mat-select>
+            <mat-select name="fromPrison" [(ngModel)]="newTransfer.fromPrison" (change)="toPrisonSelected($event.value)">
+              <mat-option value="wellington">Wellington Prison</mat-option>
+              <mat-option value="pollsmoor">Pollsmoor</mat-option>
+            </mat-select>
             <mat-hint>Transfer To</mat-hint>
         </mat-form-field></td>
         </tr>
         <tr>
           <td>Prisoner Name</td>
           <td><mat-form-field>
-            <input type="text" matInput>
+            <input type="text" name="prisonerName" matInput [(ngModel)]="newTransfer.prisonerName">
             <mat-hint>Enter Prisoner Name</mat-hint>
+          </mat-form-field></td>
+          <td>National ID</td>
+          <td><mat-form-field>
+            <input type="text" name="nationalID" matInput [(ngModel)]="newTransfer.nationalID">
+            <mat-hint>Enter National ID</mat-hint>
+          </mat-form-field></td>
+        </tr>
+        <tr>
+          <td>File Number</td>
+          <td><mat-form-field>
+            <input type="text" name="fileNumber" matInput [(ngModel)]="newTransfer.fileNumber">
           </mat-form-field></td>
           <td>Reason For Transfer</td>
           <td><mat-form-field>
-            <mat-select></mat-select>
+            <mat-select name="reason" [(ngModel)]="newTransfer.transferReason" (change)="transferReasonSelected($event.value)">
+              <mat-option value="illness">Illness</mat-option>
+              <mat-option value="bad behaviour">Bad Behaviour</mat-option>
+            </mat-select>
             <mat-hint>Select Reason</mat-hint>
           </mat-form-field></td>
         </tr>
         <tr>
           <td>Transfer Date</td>
           <td><mat-form-field>
-            <input type="text" matInput>
+            <input type="text" name="transferDate" matInput [(ngModel)]="newTransfer.transferDate">
             <mat-hint>Enter Transfer Date</mat-hint>
           </mat-form-field></td>
           <td>Arrival Date</td>
           <td><mat-form-field>
-            <input type="text" matInput>
+            <input type="text" name="arrivalDate" matInput [(ngModel)]="newTransfer.arrivalDate">
             <mat-hint>Enter Arrival Date</mat-hint>
           </mat-form-field></td>
         </tr>
         <tr>
             <td>Releasing Officer</td>
             <td><mat-form-field>
-              <mat-select></mat-select>
+              <mat-select name="releasingOfficer" [(ngModel)]="newTransfer.releasingOfficer" (change)="selectReleasingOfficer($event.value)">
+                <mat-option value="mesi">Mesi</mat-option>
+                <mat-option value="mashabela">Mashabela</mat-option>
+              </mat-select>
               <mat-hint>Select Releasing Officer</mat-hint>
             </mat-form-field></td>
             <td>Receiving Officer</td>
             <td><mat-form-field>
-              <mat-select></mat-select>
+              <mat-select name="receivingOfficer" [(ngModel)]="newTransfer.receivingOfficer" (change)="selectReceivingOfficer($event.value)">
+                <mat-option value="mesi">Mesi</mat-option>
+                <mat-option value="mashabela">Mashabela</mat-option>
+              </mat-select>
               <mat-hint>Select Receiving Officer</mat-hint>
             </mat-form-field></td>
         </tr>
@@ -58,7 +84,7 @@
     <table>
         <tr>
           <td>
-            <button mat-raised-button (click)="addNewPrisoner(newPrisoner)">Complete Transfer</button>
+            <button mat-raised-button (click)="captureTransfer(newTransfer)">Complete Transfer</button>
           </td>
         </tr>
       </table>
