@@ -45,20 +45,20 @@ export class CourtCasesComponent implements OnInit {
 
   addNewCourt(newCourt){
     const addCourt = {
-      courtDate: this.newCourt.courtDate,
-      courtName: this.newCourt.courtName,
-      presidingJudge: this.newCourt.presidingJudge,
-      attorney: this.newCourt.attorney
+      courtDate: newCourt.courtDate,
+      courtName: newCourt.courtName,
+      presidingJudge: newCourt.presidingJudge,
+      attorney: newCourt.attorney
     }
     this.prisonerService.addNewCourt(addCourt);
   }
 
   addNewCase(newCase){
     const addCase = {
-      caseNumber: this.newCase.caseNumber,
-      offence: this.newCase.offence,
-      prisonerName: this.newCase.prisonerName,
-      caseOutcome: this.newCase.caseOutcome
+      caseNumber: newCase.caseNumber,
+      offence: newCase.offence,
+      prisonerName: newCase.prisonerName,
+      caseOutcome: newCase.caseOutcome
     }
     this.prisonerService.addNewCase(addCase);
   }

@@ -48,15 +48,15 @@ export class PrisonerTransferComponent implements OnInit {
 
   captureTransfer(newTransfer){
     const addTransfer = {
-      nationalID: this.newTransfer.nationalID,
-      fromPrison: this.newTransfer.fromPrison,
-      toPrison: this.newTransfer.toPrison,
-      releasingOfficer: this.newTransfer.releasingOfficer,
-      receivingOfficer: this.newTransfer.receivingOfficer,
-      transferDate: this.newTransfer.transferDate,
-      arrivalDate: this.newTransfer.arrivalDate,
-      transferReason: this.newTransfer.transferReason,
-      prisonerName: this.newTransfer.prisonerName
+      nationalID: newTransfer.nationalID,
+      fromPrison: newTransfer.fromPrison,
+      toPrison: newTransfer.toPrison,
+      releasingOfficer: newTransfer.releasingOfficer,
+      receivingOfficer: newTransfer.receivingOfficer,
+      transferDate: newTransfer.transferDate,
+      arrivalDate: newTransfer.arrivalDate,
+      transferReason: newTransfer.transferReason,
+      prisonerName: newTransfer.prisonerName
     }
     this.prisonerService.addNewTransfer(addTransfer);
   }
