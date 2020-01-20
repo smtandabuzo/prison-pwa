@@ -1,6 +1,6 @@
 {
     "/prison-backend/*": {
-        "target": "http://localhost:8082/",
+        "target": "https://prison-java-backend.herokuapp.com/",
         "changeOrigin": true
       }
 }
