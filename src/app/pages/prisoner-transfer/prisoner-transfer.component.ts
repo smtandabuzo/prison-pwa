@@ -46,7 +46,7 @@ export class PrisonerTransferComponent implements OnInit {
     this.receivingOfficerSelected = event;
   }
 
-  captureTransfer(){
+  captureTransfer(newTransfer){
     const addTransfer = {
       nationalID: this.newTransfer.nationalID,
       fromPrison: this.newTransfer.fromPrison,

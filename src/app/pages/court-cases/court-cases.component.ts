@@ -43,7 +43,7 @@ export class CourtCasesComponent implements OnInit {
     this.caseOutcomeSelected = event;
   }
 
-  addNewCourt(){
+  addNewCourt(newCourt){
     const addCourt = {
       courtDate: this.newCourt.courtDate,
       courtName: this.newCourt.courtName,
@@ -53,7 +53,7 @@ export class CourtCasesComponent implements OnInit {
     this.prisonerService.addNewCourt(addCourt);
   }
 
-  addNewCase(){
+  addNewCase(newCase){
     const addCase = {
       caseNumber: this.newCase.caseNumber,
       offence: this.newCase.offence,
