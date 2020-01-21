@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "~0.13.0",
     "@angular/animations": "~7.2.0",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/cli": "~7.3.3",
@@ -32,7 +33,6 @@
     "typescript": "~3.2.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.13.0",
     "@angular/language-service": "~7.2.0",
     "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
