@@ -1,6 +1,7 @@
 export class AppSettings {
     public prisonerListURL: string;
     public transferListURL: string;
+
     public courtListURL: string;
     public caseListURL: string;
 
