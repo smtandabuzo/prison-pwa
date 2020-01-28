@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  prodUrl: 'https://prison-java-backend.herokuapp.com/'
+  prodUrl: 'https://prison-java-backend.herokuapp.com'
 };
 
 /*
