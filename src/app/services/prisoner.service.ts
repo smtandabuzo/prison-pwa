@@ -21,6 +21,24 @@ export class PrisonerService {
     }));
   }
 
+  getCaseList(): any {
+    this.http.get(environment.prodUrl + this.APP_SETTINGS.caseListURL).subscribe((responseData =>{
+      console.log('get Case List - Response data ' + JSON.stringify(responseData));
+    }));
+  }
+
+  getCourtList(): any {
+    this.http.get(environment.prodUrl + this.APP_SETTINGS.courtListURL).subscribe((responseData =>{
+      console.log('get Court List - Response data ' + JSON.stringify(responseData));
+    }));
+  }
+
+  getTransferList(): any {
+    this.http.get(environment.prodUrl + this.APP_SETTINGS.transferListURL).subscribe((responseData =>{
+      console.log('get Transfer List - Response data ' + JSON.stringify(responseData));
+    }));
+  }
+
   addNewPrisoner(prisoner){
     this.http.post(environment.prodUrl + this.APP_SETTINGS.prisonerListURL, prisoner).subscribe((responseData =>{
        console.log('Add Prisoner - Response data ' + JSON.stringify(responseData));

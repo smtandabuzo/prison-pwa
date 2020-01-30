@@ -21,9 +21,12 @@ export class PrisonerTransferComponent implements OnInit {
 
   receivingOfficerSelected: string;
 
+  public transferList: any;
+
   constructor(private prisonerService: PrisonerService) { }
 
   ngOnInit() {
+    this.transferList = this.prisonerService.getTransferList();
   }
 
   fromPrisonSelected(event){

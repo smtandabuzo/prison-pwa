@@ -22,9 +22,15 @@ export class CourtCasesComponent implements OnInit {
 
   caseOutcomeSelected: string;
 
+  public caseList: any;
+
+  public courtList: any;
+
   constructor(private prisonerService: PrisonerService) { }
 
   ngOnInit() {
+    this.caseList = this.prisonerService.getCaseList();
+    this.courtList = this.prisonerService.getCourtList();
   }
 
   selectCourtName(event){
