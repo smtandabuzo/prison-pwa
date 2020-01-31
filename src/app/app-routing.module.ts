@@ -19,7 +19,19 @@ const routes: Routes = [{
      {
        path: 'page-three',
        loadChildren: './pages/prisoner-transfer/prisoner-transfer.module#PrisonerTransferModule'
-     }
+     },
+    {
+      path: 'visitor-page',
+      loadChildren: './pages/visitor-information/visitor-information.module#VisitorInformationModule'
+    },
+    {
+      path: 'parole-page',
+      loadChildren: './pages/parole-management/parole-management.module#ParoleManagementModule'
+    },
+    {
+      path: 'correctional-programs',
+      loadChildren: './pages/correctional-program/correctional-program.module#CorrectionalProgramModule'
+    }
   ]
 }];
 
